@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/Weather.css" />
+    <title> Smart Farming </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+<h1><div id="temp" th:text="${temp}"></div><div id="minutely" th:text="${desc}"></div></h1>
+<h2><div id="location" th:text= "'Latitude is '+  ${lat} +' ° Longitude is' +  ${lon}+' °'" ></div></h2>
+</body>
+</html>

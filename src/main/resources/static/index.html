@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Smart Farming</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        function getLonLat(){
+
+
+                navigator.geolocation.getCurrentPosition(success, error);
+                function success(position){
+                    latitude = position.coords.latitude;
+                    longitude = position.coords.longitude;
+                    window.location ="/getLocation?" + "lat="+ latitude + "&lon=" + longitude;
+                }
+
+        }
+        function error() {
+            location.innerHTML = "Unable to retrieve your location";
+        }
+    </script>
+</head>
+<body>
+<p>Get your locaion<button id="locationRef" onclick="getLonLat()" th:text="Click here">Click Here</button></p>
+</body>
+</html>
